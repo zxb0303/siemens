@@ -119,8 +119,8 @@ var Index = function () {
                         }
                     }
                 }
-                document.body.appendChild(canvas)
-                // pdf.save('content.pdf');
+                //document.body.appendChild(canvas)
+                 pdf.save('content.pdf');
             }
         });
         $(".button_div").show();
