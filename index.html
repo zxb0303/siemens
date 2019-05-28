@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西门子报价单</title>
+    <link type="text/css" rel="stylesheet" href="./css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/input-autocomplete.css"/>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/html2canvas.js"></script>
+    <script src="./js/jsPdf.debug.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/input-autocomplete.js"></script>
+    <script src="./js/index.js"></script>
+
+</head>
+<body>
+<div class="body_div text-center">
+    <div class="logo_div"><img class="logo_img" src="./img/siemens-logo-default.png"></div>
+    <div class="text-center">
+        <div>
+            <div class="font-size-30">西门子家电报价单</div>
+            <div class="font-size-15">Siemens home appliance - Quotation Order</div>
+        </div>
+    </div>
+    <div class="button_div">
+        <button onclick="Index.addModel();">添加商品</button>
+        <!--<button onclick="Index.calculationAmount();">计算金额</button>-->
+        <button onclick="Index.createPDF();">生成pdf</button>
+    </div>
+    <div class="text-left">
+        <div class="font-size-24">客户信息</div>
+        <div class="font-size-14">Customer Info</div>
+    </div>
+    <div class="blank"></div>
+    <table class="text-left">
+        <tr>
+            <td>
+                <font class="font-size-16">客户姓名：</font><br><font class="font-size-12">Customer Name</font>
+            </td>
+            <td class="vertical-bottom">
+                <input type="text" class="input_line font-size-24 input_width"/>
+            </td>
+            <td>
+                <font class="font-size-16">联系电话：</font><br><font class="font-size-12">Telephone No</font>
+            </td>
+            <td class="vertical-bottom">
+                <input type="text" class="input_line font-size-24 input_width"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font class="font-size-16">送货地址：</font><br><font class="font-size-12">Deliver to</font>
+            </td>
+            <td class="vertical-bottom" colspan="3">
+                <input type="text" class="input_line font-size-24 input_width2"/>
+            </td>
+        </tr>
+    </table>
+    <div class="blank"></div>
+
+    <div class="font-size-14 text-left">
+        体验店服务：厨房设计 → 订单生成 → 水电定位、烟管预埋 → 橱柜尺寸对接 → 配送预约 (至少提前1周) → 预约安装 → 入户指导
+    </div>
+    <div class="blank"></div>
+
+    <div class="text-left">
+        <div class="font-size-24">
+            <span>购机信息</span>
+        </div>
+
+        <div class="font-size-14">Purchasing Info</div>
+    </div>
+    <div class="blank"></div>
+
+    <table class="order_table" id="product_table">
+        <tr id="table_head">
+            <td width="40px"><font class="font-size-16">序号</font><br><font class="font-size-12">No</font></td>
+            <td width="40px"><font class="font-size-16">品类</font><br><font class="font-size-12">Category</font></td>
+            <td width="140px"><font class="font-size-16">型号</font><br><font class="font-size-12">Model</font></td>
+            <td><font class="font-size-16">简介</font><br><font class="font-size-12">Introduce</font></td>
+            <td width="200px"><font class="font-size-16">图片</font><br><font class="font-size-12">Picture</font></td>
+            <td width="200px"><font class="font-size-16">安装尺寸</font><br><font class="font-size-12">Install</font></td>
+            <td width="40px"><font class="font-size-16">数量</font><br><font class="font-size-12">Qty</font></td>
+            <td width="50px"><font class="font-size-16">市场价</font><br><font class="font-size-12">Price</font></td>
+            <td width="50px"><font class="font-size-16">优惠价</font><br><font class="font-size-12">Discount</font></td>
+        </tr>
+        <tr id="table_foot">
+            <td colspan="2"><font class="font-size-16">合计金额</font><br><font class="font-size-12">Total amount</font>
+            </td>
+            <td colspan="7" id="amount" class="text-right"></td>
+        </tr>
+    </table>
+    <div class="blank"></div>
+    <div class="text-left font-size-16">备注：</div>
+    <div class="blank"></div>
+    <textarea  class="textarea"></textarea>
+    <div class="blank"></div>
+
+</div>
+
+
+</body>
+
+</html>
