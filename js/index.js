@@ -120,12 +120,38 @@ var Index = function () {
                     }
                 }
                 //document.body.appendChild(canvas)
-                 pdf.save('content.pdf');
+
+                //var fileName = getNowFormatDate()+"("+$("#customer_name").val()+"-"+$("#customer_mobile").val()+").pdf";
+                var fileName = "报价单-"+getNowFormatDate();
+                if($("#customer_name").val().trim()!=""){
+                    fileName=fileName+"-"+$("#customer_name").val();
+                }
+                if($("#customer_mobile").val().trim()!=""){
+                    fileName=fileName+"-"+$("#customer_mobile").val();
+                }
+                fileName=fileName+".pdf";
+                pdf.save(fileName);
             }
         });
         $(".button_div").show();
     };
 
+    var getNowFormatDate=function() {
+        var date = new Date();
+        //var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        //var currentdate = year + seperator1 + month + seperator1 + strDate;
+        var currentdate = year + "年" + month + "月" + strDate+"日";
+        return currentdate;
+    }
     return {
         init: init,
         addModel: addModel,
