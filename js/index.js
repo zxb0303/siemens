@@ -2,7 +2,7 @@ var Index = function () {
     var modelNum = 1;
     var index = 1;
     var init = function () {
-        console.log("init");
+        //console.log("init");
         while (modelNum <= 5) {
             addModel();
         }
@@ -10,7 +10,7 @@ var Index = function () {
     };
 
     var addModel = function () {
-        console.log("addModel");
+        //console.log("addModel");
         $("#table_foot").before("<tr class='table_body'>" +
             "<td id='no_" + modelNum + "'></td>" +
             "<td id='category_" + modelNum + "'></td>" +
