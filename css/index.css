@@ -93,11 +93,11 @@ table {
 }
 
 .input_width {
-    width: 230px;
+    width: 300px;
 }
 
 .input_width2 {
-    width: 570px;
+    width: 710px;
 }
 
 
@@ -111,7 +111,7 @@ table {
 }
 
 .input_model {
-    width: 140px;
+    width: 150px;
     border: 0px solid #ccc;
     border-radius: 2px; /*html5*/
     text-indent: 0 !important;
