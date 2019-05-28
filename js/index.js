@@ -25,6 +25,13 @@ var Index = function () {
         $("#model_" + modelNum).bigAutocomplete({
             data: modelData,
             title: 'model',
+            // formatItem:function(data, i, row){
+            //     return row.model +' (' +row.category + ')';
+            // },
+            // //默认formatSelected=formatItem,这里formatSelected不同,额外定义
+            // formatSelected:function(data, i, row){
+            //     return row.model;
+            // },
             callback: function (row, param) {
                 selectModel(row, param);
             },
@@ -85,6 +92,9 @@ var Index = function () {
 
     var createPDF = function (){
         $(".button_div").hide();
+        $(".input_model").attr("style","border-bottom:0px solid #000000;");
+        $(".input_clean").attr("style","border-bottom:0px solid #000000;");
+
         $("body,html").scrollTop(0);
         html2canvas(document.body, {
             background : '#ffffff',
@@ -134,6 +144,8 @@ var Index = function () {
             }
         });
         $(".button_div").show();
+        $(".input_model").attr("style","border-bottom:1px solid #000000;");
+        $(".input_clean").attr("style","border-bottom:1px solid #000000;");
     };
 
     var getNowFormatDate=function() {
